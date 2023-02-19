@@ -1,30 +1,22 @@
 #include "Line.h"
 #include <iostream>
 #include <math.h>
+#include "Point.h"
 using namespace std;
 
 
-void Line::SetX1(int value)
+void Line::SetPoint1(Point value)
 {
-	x1_ = value;
+	point1_ = value;
 }
-void Line::SetX2(int value)
+void Line::SetPoint2(Point value)
 {
-	x2_ = value;
-}
-
-void Line::SetY1(int value)
-{
-	y1_ = value;
-}
-void Line::SetY2(int value)
-{
-	y2_ = value;
+	point2_ = value;
 }
 
 
 void Line::Print() {
-	cout << '(' << x1_ << ',' << y1_ << ')' << '(' << x2_ << ',' << y2_ << ')' << endl;
+	cout << '(' << point1_.GetX() << ',' << point1_.GetY() << ')' << '(' << point2_.GetX() << ',' << point2_.GetY() << ')' << endl;
 }
 
 bool Line::Read(const char* txt)
@@ -37,43 +29,43 @@ bool Line::Read(const char* txt)
 	cout << "X2: " && cin >> x2;
 	cout << "Y2: " && cin >> y2;
 
-	SetX1(x1);
-	SetY1(y1);
-	SetX2(x2);
-	SetY2(y2);
+	point1_.SetX(x1);
+	point1_.SetY(y1);
+	point2_.SetX(x2);
+	point2_.SetY(y2);
 	return true;
 }
 
-void Line::Move(int delta_x1, int delta_y1, int delta_x2,  int delta_y2)
+void Line::Move(int delta_x, int delta_y)
 {
-	this->SetX1(this->x1_ + delta_x1);
-	this->SetY1(this->y1_ + delta_y1);
-	this->SetX2(this->x2_ + delta_x2);
-	this->SetY2(this->y2_ + delta_y2);
+	point1_.SetX(point1_.GetX() + delta_x);
+	point1_.SetY(point1_.GetY() + delta_y);
+	point2_.SetX(point2_.GetX() + delta_x);
+	point2_.SetY(point2_.GetY() + delta_x);
 }
 
 double Line::Length()
 {
-	return sqrt(pow(static_cast<double>(x1_ - x2_), 2) + pow(static_cast<double>(y1_ - y2_), 2));
+	return sqrt(pow(static_cast<double>(point1_.GetX() - point2_.GetX()), 2) + pow(static_cast<double>(point1_.GetY() - point2_.GetY()), 2));
 }
 
 void Line::Center()
 {
 	int x, y;
-	x = (x1_ + x2_) / 2;
-	y = (y1_ + y2_) / 2;
+	x = (point1_.GetX() + point2_.GetX()) / 2;
+	y = (point1_.GetY() + point2_.GetY()) / 2;
 
 	cout << "Center: " << '(' << x << ',' << y << ')' << endl;
 }
 
 void Line::CheckPoint(int x, int y)
 {
-	double result = (sqrt(pow(static_cast<double>(x1_ - x), 2) + pow(static_cast<double>(y1_ - y), 2)))
-		+ (sqrt(pow(static_cast<double>(x - x2_), 2) + pow(static_cast<double>(y - y2_), 2)));
+	double result = (sqrt(pow(static_cast<double>(point1_.GetX() - x), 2) + pow(static_cast<double>(point1_.GetY() - y), 2)))
+		+ (sqrt(pow(static_cast<double>(x - point2_.GetX()), 2) + pow(static_cast<double>(y - point2_.GetY()), 2)));
 	if (result == Length())
-		cout << "Dot is on the line" << endl;
+		cout << "Dot" << '(' << x << ',' << y << ')' << " is on the line" << endl;
 	else
-		cout << "Dot is not on the line" << endl;;
+		cout << "Dot" << '(' << x << ',' << y << ')' << " is not on the line" << endl;
 
 }
 

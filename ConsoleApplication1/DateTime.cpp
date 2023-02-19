@@ -15,6 +15,7 @@ bool DateTime::Read(const char *txt) {
 	cout << "Year: " && cin >> year;
 	cout << "Hours: " && cin >> hour;
 	cout << "Minutes: " && cin >> minute;
+	cout << endl;
 
 	if (CheckValid(day, month, year, hour, minute)){
 		SetDay(day);
@@ -32,14 +33,17 @@ bool DateTime::Read(const char *txt) {
 
 void DateTime::AddDays(int value) {
 	this -> SetDay(this -> day_ + value);
+	cout << value << " days was added" << endl;
 }
 
 void DateTime::AddYears(int value) {
 	this->SetYear(this->year_ + value);
+	cout << value << " years was added" << endl;
 }
 
 void DateTime::AddMonths(int value) {
 	this->SetMonth(this->month_ + value);
+	cout << value << " months was added" << endl;
 }
 
 bool DateTime::CheckValid(int day, int month, int year, int hour, int minute) {

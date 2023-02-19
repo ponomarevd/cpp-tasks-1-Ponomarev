@@ -4,6 +4,16 @@ using namespace std;
 
 int main()
 {
+    cout << ("----#8 DRAW PIXEL----") << endl;
+    Pixel pixelToDraw;
+    pixelToDraw.SetX(50);
+    pixelToDraw.SetY(40);
+    pixelToDraw.Draw();
+    this_thread::sleep_for(chrono::seconds(5));
+    cout << endl;
+
+
+
     cout << ("----#1 DATETIME----") << endl;
     DateTime *time1 = new DateTime();
 
@@ -19,6 +29,8 @@ int main()
     time1->AddMonths(1);
     time1->AddYears(2);
 
+    cout << endl;
+
     if (time1->CheckValid(time1->GetDay(), time1->GetMonth(), time1->GetYear(), time1->GetHour(), time1->GetMinute())) {
         time1->PrintDate();
     }
@@ -31,6 +43,7 @@ int main()
 
     cout << endl;
 
+    cout << "Month of year: ";
     time1->MonthOfYear();
 
     delete time1;
@@ -45,7 +58,7 @@ int main()
 
     a.SetColor("Green");
 
-    a.Move(1015, 1025);
+    a.Move(4, 6);
 
     b->Read("INPUT VALUES");
     cout << "Dist from "; b->Print();
@@ -69,7 +82,7 @@ int main()
 
 
     cout << ("----#5 POINT IN LINE----") << endl;
-    line->CheckPoint(5, 5);
+    line->CheckPoint(3, 4);
     delete line;
     cout << endl;
 
@@ -91,15 +104,13 @@ int main()
     cout << endl;
 
 
-
-    cout << ("----#8 DRAW PIXEL----") << endl;
-    a.Draw();
-    cout << endl;
-
-
     cout << ("----#9 TIMER----") << endl;
     Timer* timer = new Timer;
-    timer->SetInterval(5);
+    int seconds;
+    cout << "Input interval in seconds: ";
+    cin >> seconds;
+    cout << endl;
+    timer->SetInterval(seconds);
     timer->Start();
     delete timer;
     cout << endl;

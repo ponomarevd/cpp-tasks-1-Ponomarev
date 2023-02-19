@@ -60,7 +60,6 @@ void Pixel::Draw()
 	SetPixel(hDC, x_, y_, RGB(255, 0, 0));
 
 	ReleaseDC(hWnd, hDC);
-	std::cin.get();
 }
 void Pixel::Erase()
 {

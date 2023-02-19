@@ -15,6 +15,7 @@ void Timer::PrintTimer()
 void Timer::SetInterval(int seconds)
 {
 	interval_ = seconds;
+    cout << "Timer will elapsed in " << seconds << " seconds" << endl;
 }
 
 void Timer::Start()
@@ -22,7 +23,6 @@ void Timer::Start()
     while (true) {
         PrintTimer();
         if (interval_ == seconds_) {
-            cout << "Timer elapsed!" << endl;
             Elapsed();
             break;
         }
@@ -33,5 +33,5 @@ void Timer::Start()
 
 void Timer::Elapsed()
 {
-    cout << "Your func" << endl;
+    cout << "Timer elapsed!" << endl;
 }

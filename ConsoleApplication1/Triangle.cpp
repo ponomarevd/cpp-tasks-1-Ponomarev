@@ -79,7 +79,7 @@ void Triangle::Center()
 	double y = (y1_ + y2_ + y3_) / 3;
 
 
-	cout << "Center of a triangle: " << '(' << x << ',' << y << ')';
+	cout << "Center of a triangle: " << '(' << x << ',' << y << ')' << endl;
 }
 
 void Triangle::Move(int delta_x1, int delta_y1, int delta_x2, int delta_y2, int delta_x3, int delta_y3)

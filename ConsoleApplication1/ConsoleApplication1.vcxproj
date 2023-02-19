@@ -143,6 +143,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="Pixel.cpp" />
+    <ClCompile Include="Point.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="Include.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Pixel.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Triangle.h" />
   </ItemGroup>
