@@ -21,6 +21,8 @@ public:
 	bool Read(const char* txt);
 	void Move(int, int);
 	double Dist(const Pixel&);
+	void Draw();
+	void Erase();
 };
 
 inline int Pixel::GetX() {

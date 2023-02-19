@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Pixel.h"
+#include <windows.h>
 using namespace std;
 
 void Pixel::SetX(int value)
@@ -46,4 +47,28 @@ void Pixel::Move(int delta_x, int delta_y)
 double Pixel::Dist(const Pixel& otherPixel)
 {
 	return sqrt(pow(static_cast<double>(otherPixel.x_ - x_), 2) + pow(static_cast<double>(otherPixel.y_ - y_), 2));
+}
+
+POINT op;
+HWND hWnd = GetConsoleWindow();
+HDC hDC = GetDC(hWnd);
+
+void Pixel::Draw()
+{
+	SelectObject(hDC, GetStockObject(WHITE_PEN));
+
+	SetPixel(hDC, x_, y_, RGB(255, 0, 0));
+
+	ReleaseDC(hWnd, hDC);
+	std::cin.get();
+}
+void Pixel::Erase()
+{
+
+	SelectObject(hDC, GetStockObject(WHITE_PEN));
+
+	SetPixel(hDC, x_, y_, RGB(0, 0, 0));
+
+	ReleaseDC(hWnd, hDC);
+	std::cin.get();
 }

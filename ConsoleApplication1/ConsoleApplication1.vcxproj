@@ -143,12 +143,16 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="Pixel.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DateTime.h" />
     <ClInclude Include="Include.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Pixel.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Triangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

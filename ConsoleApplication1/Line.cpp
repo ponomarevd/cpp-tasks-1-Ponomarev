@@ -24,7 +24,7 @@ void Line::SetY2(int value)
 
 
 void Line::Print() {
-	cout << '(' << x1_ << ',' << x2_ << ')' << '(' << y1_ << ',' << y2_ << ')' << endl;
+	cout << '(' << x1_ << ',' << y1_ << ')' << '(' << x2_ << ',' << y2_ << ')' << endl;
 }
 
 bool Line::Read(const char* txt)
@@ -63,6 +63,17 @@ void Line::Center()
 	x = (x1_ + x2_) / 2;
 	y = (y1_ + y2_) / 2;
 
-	cout << "Center: " << '(' << x << ',' << y << ')';
+	cout << "Center: " << '(' << x << ',' << y << ')' << endl;
+}
+
+void Line::CheckPoint(int x, int y)
+{
+	double result = (sqrt(pow(static_cast<double>(x1_ - x), 2) + pow(static_cast<double>(y1_ - y), 2)))
+		+ (sqrt(pow(static_cast<double>(x - x2_), 2) + pow(static_cast<double>(y - y2_), 2)));
+	if (result == Length())
+		cout << "Dot is on the line" << endl;
+	else
+		cout << "Dot is not on the line" << endl;;
+
 }
 

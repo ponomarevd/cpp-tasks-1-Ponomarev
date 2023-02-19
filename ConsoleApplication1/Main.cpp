@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    /*cout << ("----#1 DATETIME----") << endl;
+    cout << ("----#1 DATETIME----") << endl;
     DateTime *time1 = new DateTime();
 
     if (time1->Read("INPUT VALUES")) {
@@ -45,7 +45,7 @@ int main()
 
     a.SetColor("Green");
 
-    a.Move(10, 15);
+    a.Move(1015, 1025);
 
     b->Read("INPUT VALUES");
     cout << "Dist from "; b->Print();
@@ -53,7 +53,7 @@ int main()
     cout << " is " << b->Dist(a) << endl;
 
     delete b;
-    cout << endl;*/
+    cout << endl;
 
 
 
@@ -64,6 +64,43 @@ int main()
     line->Print();
     cout << "Length: " << line->Length() << endl;
     line->Center();
-    delete line;
+    cout << endl;
 
+
+
+    cout << ("----#5 POINT IN LINE----") << endl;
+    line->CheckPoint(5, 5);
+    delete line;
+    cout << endl;
+
+
+
+
+    cout << ("----#6 TRIANGLE----") << endl;
+
+    Triangle* triangle = new Triangle();
+
+    triangle->Read("INPUT VALUES");
+    triangle->Print();
+    triangle->Move(6, 6, 6, 4, 4, 4);
+    cout << "Perimeter: " << triangle->Perimeter() << endl;
+    cout << "Area: " << triangle->Area() << endl;
+    triangle->Center();
+
+    delete triangle;
+    cout << endl;
+
+
+
+    cout << ("----#8 DRAW PIXEL----") << endl;
+    a.Draw();
+    cout << endl;
+
+
+    cout << ("----#9 TIMER----") << endl;
+    Timer* timer = new Timer;
+    timer->SetInterval(5);
+    timer->Start();
+    delete timer;
+    cout << endl;
 }

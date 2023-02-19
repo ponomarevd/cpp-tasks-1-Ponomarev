@@ -25,6 +25,7 @@ public:
 	void Move(int, int, int, int);
 	double Length();
 	void Center();
+	void CheckPoint(int, int);
 };
 
 inline int Line::GetX1() {
